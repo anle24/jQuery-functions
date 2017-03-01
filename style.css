@@ -1,0 +1,77 @@
+.container {
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.box {
+  width: 50%;
+  border: 1px solid black;
+  margin: auto;
+}
+
+#slidedbox {
+  background: blue;
+  width: 5em;
+  height: 5em;
+  margin: auto;
+}
+
+#slideubox {
+  background: red;
+  width: 5em;
+  height: 5em;
+  margin: auto;
+}
+
+#slidetbox {
+  background: purple;
+  width: 5em;
+  height: 5em;
+  margin: auto;
+}
+
+#fadeibox {
+  background: orange;
+  width: 5em;
+  height: 5em;
+  margin: auto;
+}
+#fadeobox {
+  background: green;
+  width: 5em;
+  height: 5em;
+  margin: auto;
+}
+
+.bluetext {
+  color: blue;
+}
+
+.box2 {
+  width: 50%;
+  background-color: gray;
+  border: 1px solid blue;
+  font-family: monospace;
+  font-size: 1.2em;
+  margin: auto;
+}
+
+b {
+  color: blue
+}
+
+.valclass {
+  color: red;
+}
+
+#textbox {
+  width: 70%;
+  height: 2.5em;
+  border: 1px dotted blue;
+  margin: 0.5em auto auto auto;
+}

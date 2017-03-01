@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Functions</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#hide button').click(function(){
+          $('#hide p').hide();
+        })
+        $('#show button').click(function(){
+          $('#show .hidden').show();
+        })
+        $('#slidedown button').click(function(){
+          if ( $('#slidedown #slidedbox:first').is( ':hidden')){
+            $('#slidedown #slidedbox').slideDown();
+          }
+          else {
+            $('#slidedown #slidedbox').hide();
+          }
+        })
+        $('#slideup button').click(function(){
+          if ( $('#slideup #slideubox:first').is( ':hidden')){
+            $('#slideup #slideubox').show();
+          }
+          else {
+            $('#slideup #slideubox').slideUp();
+          }
+        })
+        $('#slidetoggle button').click(function(){
+          $('#slidetoggle #slidetbox').slideToggle();
+        })
+        $('#fadein button').click(function(){
+          // $('#fadein #fadeibox').fadeIn('slow');
+          if ( $('#fadein #fadeibox:first').is( ':hidden')){
+            $('#fadein #fadeibox').fadeIn('slow');
+          }
+          else {
+            $('#fadein #fadeibox').hide();
+          }
+          // if ( $('#fadein fadeibox:first').is( ':hidden')){
+          //   $('#fadein #fadeibox').fadeIn('slow');
+          // }
+          // else {
+          //   $('#fadein #fadeibox').hide();
+          // }
+        })
+        $('#fadeout button').click(function(){
+          // $('#fadeout #fadeobox').fadeOut('slow');
+          if ( $('#fadeout #fadeobox:first').is( ':hidden')){
+            $('#fadeout #fadeobox').show();
+          }
+          else {
+            $('#fadeout #fadeobox').fadeOut('slow');
+          }
+        })
+        $('#addclass button').click(function(){
+          $('#addclass p').addClass('bluetext');
+        })
+        $('#before button').click(function(){
+          $('#before p.main').before('<p>TEXT</p>');
+        })
+        $('#after button').click(function(){
+          $('#after p.main').after('<p>TEXT</p>');
+        })
+        $('#append button').click(function(){
+          $('#append p').append(' TEXT');
+        })
+        $('#html button').click(function(){
+          $('#html p').html('New Content');
+        })
+        $('#attr button').click(function(){
+          $('#attr').attr('class', 'box2');
+        })
+        $('#val button').click(function(){
+          var value = $('#options').val();
+          $('p.valclass').html("<b>Value is:</b>" + value);
+        })
+        $('#text button').click(function(){
+          $('#text #textbox').text('<p> it will show exactly what you enter, including html tags </p>');
+        })
+        $('#data button').click(function(){
+          $('#data').data('test', 'DATA');
+          $('#data p span').text($('#data').data('test'));
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="hide">
+        <h1>Hide</h1>
+        <button type="button" name="button" >Hide</button>
+        <p>Click the button to hide this paragraph</p>
+      </div>
+      <div class="box" id="show">
+        <h1>Show</h1>
+        <button type="button" name="button">Show</button>
+        <p>Click the button to show the hidden paragraph</p>
+        <p class="hidden">Hidden paragaph</p>
+      </div>
+      <div class="box" id="toggle">
+        <h1>Toggle</h1>
+        <button type="button" name="button">Toggle</button>
+        <p>Click this button to toggle between showing and hiding this paragraph</p>
+      </div>
+      <div class="box" id="slidedown">
+        <h1>slideDown</h1>
+        <button type="button" name="button">slideDown</button>
+        <p>Click the button to slide down the hidden blue box</p>
+        <p>(normally does not have a secondary hide function)</p>
+        <div id="slidedbox" class="hidden"></div>
+      </div>
+      <div class="box" id="slideup">
+        <h1>slideUp</h1>
+        <button type="button" name="button">slideUp</button>
+        <p>Click the button to slide the red box up</p>
+        <p>(normally does not have a secondary show function)</p>
+        <div id="slideubox"></div>
+      </div>
+      <div class="box" id="slidetoggle">
+        <h1>Slidetoggle</h1>
+        <button type="button" name="button">slideToggle</button>
+        <p>Click the button to slidetoggle the hidden purple box</p>
+        <div id="slidetbox"></div>
+      </div>
+      <div class="box" id="fadein">
+        <h1>fadeIn</h1>
+        <button type="button" name="button">fadeIn</button>
+        <p>Click the button to fade in the hidden orange box</p>
+        <p>(normally does not have secondary hide function)</p>
+        <div id="fadeibox" class="hidden"></div>
+      </div>
+      <div class="box" id="fadeout">
+        <h1>fadeOut</h1>
+        <button type="button" name="button">fadeOut</button>
+        <p>Click the button to fade out the green box</p>
+        <p>(normally does not have secondary show function)</p>
+        <div id="fadeobox"></div>
+      </div>
+      <div class="box" id="addclass">
+        <h1>AddClass</h1>
+        <button type="button" name="button">addClass</button>
+        <p>Click the button to add class 'bluetext' to this paragraph</p>
+      </div>
+      <div class="box" id="before">
+        <h1>Before</h1>
+        <button type="button" name="button">before</button>
+        <p class="main">Click the button to add text before this paragraph</p>
+      </div>
+      <div class="box" id="after">
+        <h1>After</h1>
+        <button type="button" name="button">after</button>
+        <p class="main">Click the button to add text after this paragraph</p>
+      </div>
+      <div class="box" id="append">
+        <h1>Append</h1>
+        <button type="button" name="button">append</button>
+        <p>Click the button to append text to this paragraph</p>
+      </div>
+      <div class="box" id="html">
+        <h1>HTML</h1>
+        <button type="button" name="button">html</button>
+        <p>Click the button to change the HTML in this 'p' section to 'New Content'</p>
+      </div>
+      <div class="box" id="attr">
+        <h1>Attr</h1>
+        <button type="button" name="button">attr</button>
+        <p>Click the button to change the 'class' attribute of this section</p>
+      </div>
+      <div class="box" id="val">
+        <h1>Val</h1>
+        <select id="options">
+          <option selected="selected">UNO</option>
+          <option selected="selected">DOS</option>
+          <option selected="selected">TRES</option>
+        </select>
+        <button type="button" name="button">val</button>
+        <p>Click the button to display the value of the selected option</p>
+        <p class="valclass"></p>
+      </div>
+      <div class="box" id="text">
+        <h1>Text</h1>
+        <button type="button" name="button">text</button>
+        <div id="textbox"></div>
+        <p>Click the button to enter text into the above box</p>
+      </div>
+      <div class="box" id="data">
+        <h1>Data</h1>
+        <button type="button" name="button">data</button>
+        <p>Click the button to store data (inputted string:"DATA" into .data parameter) and then .text into the hidden empty span tags here <span class="bluetext"></span></p>
+    </div>
+  </body>
+</html>
